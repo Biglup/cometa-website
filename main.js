@@ -118,97 +118,85 @@ document.addEventListener('DOMContentLoaded', () => {
                 "language": "JavaScript/TypeScript",
                 "description": "JavaScript and TypeScript bindings for libcardano-c",
                 "status": "In Development",
-                "color": "#635bfffe",
-                "icon": "fab fa-js",
-                "repository": "https://github.com/Biglup/cardano-c-js"
+                "repository": "https://github.com/Biglup/cometa.js",
+                "documentation": "https://cometajs.readthedocs.io/en/latest"
             },
             {
                 "language": "C++",
                 "description": "C++ bindings for libcardano-c",
                 "status": "Planned",
-                "color": "#635bfffe",
-                "icon": "fas fa-code",
-                "repository": "https://github.com/Biglup/cardano-c-cpp"
+                "repository": "https://github.com/Biglup/cardano-c-cpp",
+                "documentation": "https://github.com/Biglup/cardano-c-cpp#readme"
             },
             {
                 "language": "C#",
                 "description": "C# bindings for libcardano-c",
                 "status": "Planned",
-                "color": "#635bfffe",
-                "icon": "fab fa-microsoft",
-                "repository": "https://github.com/Biglup/cardano-c-sharp"
+                "repository": "https://github.com/Biglup/cardano-c-sharp",
+                "documentation": "https://github.com/Biglup/cardano-c-sharp#readme"
             },
             {
                 "language": "Java",
                 "description": "Java bindings for libcardano-c",
                 "status": "Planned",
-                "color": "#635bfffe",
-                "icon": "fab fa-java",
-                "repository": "https://github.com/Biglup/cardano-c-java"
+                "repository": "https://github.com/Biglup/cardano-c-java",
+                "documentation": "https://github.com/Biglup/cardano-c-java#readme"
             },
             {
                 "language": "Python",
                 "description": "Python bindings for libcardano-c",
                 "status": "Planned",
-                "color": "#635bfffe",
-                "icon": "fab fa-python",
-                "repository": "https://github.com/Biglup/cardano-c-python"
+                "repository": "https://github.com/Biglup/cardano-c-python",
+                "documentation": "https://github.com/Biglup/cardano-c-python#readme"
             },
             {
                 "language": "Lua",
                 "description": "Lua bindings for libcardano-c",
                 "status": "Planned",
-                "color": "#635bfffe",
-                "icon": "fas fa-code",
-                "repository": "https://github.com/Biglup/cardano-c-lua"
+                "repository": "https://github.com/Biglup/cardano-c-lua",
+                "documentation": "https://github.com/Biglup/cardano-c-lua#readme"
             },
             {
                 "language": "Ruby",
                 "description": "Ruby bindings for libcardano-c",
                 "status": "Planned",
-                "color": "#635bfffe",
-                "icon": "fas fa-gem",
-                "repository": "https://github.com/Biglup/cardano-c-ruby"
+                "repository": "https://github.com/Biglup/cardano-c-ruby",
+                "documentation": "https://github.com/Biglup/cardano-c-ruby#readme"
             },
             {
                 "language": "PHP",
                 "description": "PHP bindings for libcardano-c",
                 "status": "Planned",
-                "color": "#635bfffe",
-                "icon": "fab fa-php",
-                "repository": "https://github.com/Biglup/cardano-c-php"
+                "repository": "https://github.com/Biglup/cardano-c-php",
+                "documentation": "https://github.com/Biglup/cardano-c-php#readme"
             },
             {
                 "language": "Zig",
                 "description": "Zig bindings for libcardano-c",
                 "status": "Planned",
-                "color": "#635bfffe",
-                "icon": "devicon-zig-original",
-                "repository": "https://github.com/Biglup/cardano-c-zig"
+                "repository": "https://github.com/Biglup/cardano-c-zig",
+                "documentation": "https://github.com/Biglup/cardano-c-zig#readme"
             },
             {
                 "language": "Odin",
                 "description": "Odin bindings for libcardano-c",
                 "status": "Planned",
-                "color": "#635bfffe",
-                "icon": "devicon-zig-original",
-                "repository": "https://github.com/Biglup/cardano-c-odin"
+                "repository": "https://github.com/Biglup/cardano-c-odin",
+                "documentation": "https://github.com/Biglup/cardano-c-odin#readme"
             },
             {
                 "language": "Ada",
                 "description": "Ada bindings for libcardano-c",
                 "status": "Planned",
-                "color": "#635bfffe",
-                "icon": "fas fa-code",
-                "repository": "https://github.com/Biglup/cardano-c-ada"
+                "repository": "https://github.com/Biglup/cardano-c-ada",
+                "documentation": "https://github.com/Biglup/cardano-c-ada#readme"
             },
             {
                 "language": "Go",
                 "description": "Go bindings for libcardano-c",
                 "status": "Planned",
-                "color": "#635bfffe",
-                "icon": "fab fa-golang",
-                "repository": "https://github.com/Biglup/cardano-c-go"
+                "repository": "https://github.com/Biglup/cardano-c-go",
+                "documentation": "https://github.com/Biglup/cardano-c-go#readme"
             }
         ]
     };
