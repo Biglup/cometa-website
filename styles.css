@@ -1,0 +1,229 @@
+/* --- NEW Meteor.com Inspired Theme V2 --- */
+:root {
+    --bg-color: #151430;          /* Very Dark Blue/Near Black */
+    --primary-color: #635bff;      /* Meteor's Primary Purple */
+    --secondary-color: #a49eff;     /* Lighter purple for hover */
+    --text-color: #ffffff;          /* Pure White */
+    --text-color-muted: #a4a6c6;   /* Muted Grey/Blue (from Meteor text) */
+    --card-bg: #0f0f22;          /* Slightly Lighter Dark Blue */
+    --border-color: rgba(255, 255, 255, 0); /* Faint white border */
+
+    /* Fonts */
+    --header-font: 'Inter', sans-serif;
+    --body-font: 'Inter', sans-serif; /* Use Inter for body too */
+}
+/* --- End NEW --- */
+
+/* Base Styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--body-font); background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; /* Increased line height */ overflow-x: hidden; font-weight: 400; /* Default body weight */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+h1, h2, h3, h4 { font-family: var(--header-font); font-weight: 600; line-height: 1.3; /* Adjusted heading line height */ margin-bottom: 1rem; color: var(--text-color); }
+h1 { font-size: 3.2rem; font-weight: 700; letter-spacing: -1px; }
+h2 { font-size: 2.4rem; font-weight: 600; }
+h3 { font-size: 1.3rem; font-weight: 600; }
+h4 { font-size: 1.1rem; font-weight: 500; /* Medium weight for H4 */ }
+p { margin-bottom: 1.2rem; font-weight: 400; /* Regular weight paragraph */ color: var(--text-color-muted); font-size: 1rem; }
+a { color: var(--primary-color); /* Purple for links */ text-decoration: none; transition: color 0.2s ease; }
+a:hover { color: var(--secondary-color); /* Lighter purple hover */ }
+section { padding: 80px 0; position: relative; /* Increased section padding */ }
+
+/* --- Header --- */
+.site-header {
+    background: #151430de; /* Match dark bg */
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    padding: 15px 0; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border-color);
+}
+.site-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { font-size: 1.8rem; display: inline-block; line-height: 1; }
+.logo-text { font-family: var(--header-font); font-weight: 600; font-size: 1.4rem; color: #fff; line-height: 1; transition: color 0.3s ease; }
+.logo:hover .logo-text { color: var(--primary-color); /* Purple hover */ }
+.site-nav { display: flex; align-items: center; flex-wrap: wrap; gap: 15px 35px; /* Wider gap */ justify-content: center;}
+.site-nav a {
+    font-family: var(--header-font); font-size: 0.95rem; font-weight: 500; color: var(--text-color-muted);
+    text-decoration: none; padding: 5px 4px; position: relative; transition: color 0.3s ease; letter-spacing: 0.3px;
+    display: flex; align-items: center;
+}
+.site-nav a:hover { color: var(--text-color); /* White hover */ }
+.site-nav a::after { display: none; } /* No underline */
+
+/* GitHub Icon Styling */
+.github-icon {
+    width: 22px; /* Slightly larger */
+    height: 22px;
+    fill: var(--text-color-muted);
+    transition: fill 0.3s ease;
+}
+.site-nav a:hover .github-icon {
+    fill: var(--text-color); /* White hover */
+}
+
+/* --- Hero Section Styling --- */
+.hero {
+    min-height: 80vh; /* Keep height reasonable */ display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden;
+    background: var(--bg-color); /* Solid dark */
+}
+.hero-content { max-width: 750px; /* Slightly narrower */ position: relative; z-index: 2; }
+.hero h1 { color: #fff; margin-bottom: 1.5rem; font-size: 3.8rem; /* Larger H1 */ font-weight: 700; line-height: 1.2;}
+.hero p { font-size: 1.2rem; /* Adjusted size */ margin-bottom: 2.5rem; font-weight: 400; color: var(--text-color-muted); /* Muted text */ max-width: 600px; margin-left: auto; margin-right: auto; }
+.cta-button {
+     display: inline-block; background: var(--primary-color); color: #fff; padding: 14px 35px; border-radius: 8px; /* More rounded */
+     font-family: var(--header-font); font-weight: 500; /* Medium weight */ font-size: 1rem; transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+     border: none; box-shadow: 0 4px 14px rgba(99, 91, 255, 0.25); /* Adjusted Purple glow */
+     text-transform: none; letter-spacing: 0px;
+}
+.cta-button:hover {
+     background: var(--secondary-color); /* Lighter purple hover */ color: #fff; transform: translateY(-2px);
+     box-shadow: 0 6px 16px rgba(99, 91, 255, 0.35);
+}
+ /* Secondary button style */
+ .cta-button.secondary {
+     background: transparent; border: 1px solid var(--border-color); color: var(--text-color);
+     box-shadow: none;
+     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+ }
+ .cta-button.secondary:hover {
+     background-color: var(--card-bg); color: var(--text-color); border-color: var(--card-bg); transform: none;
+ }
+
+/* Starry Night Effect */
+.stars-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0; pointer-events: none; }
+/* Base style for ALL stars */
+.star { position: absolute; border-radius: 50%; background-color: rgba(255, 255, 255, 0.7); }
+/* Style for static stars (JS sets size/pos/opacity) */
+.star.static {}
+/* Twinkling Stars */
+.star.twinkle { width: 2px; height: 2px; background-color: rgba(255, 255, 255, 0.5); box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.3); opacity: 0.5; animation: twinkle 4s ease-in-out 1; animation-delay: var(--twinkle-delay, 0s); }
+@keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.5); } }
+
+/* --- COMET CSS --- */
+.comets {
+    position: absolute; top: 0; left: 0; width: 150vw; height: 150vh;
+    transform-origin: center center; transform: translate3D(-25vw, -25vh, 0) rotate(65deg) scale(0.75);
+    z-index: 1; pointer-events: none;
+    opacity: 0.7; /* Adjusted opacity */
+}
+.comet {
+    position: absolute; width: 1px; height: 75vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.6), transparent); /* Default fallback */
+    animation-name: comet-move-fade;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes comet-move-fade {
+    0% { opacity: 0; transform: translateY(200%) scaleY(0); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(0) scaleY(1); }
+}
+/* Rainbow Effect Keyframes - Using Bright Colors */
+@keyframes rainbow-flash {
+    0%   { background: linear-gradient(#ff3b3b, transparent); } /* Bright Red */
+    16%  { background: linear-gradient(#ff9500, transparent); } /* Bright Orange */
+    33%  { background: linear-gradient(#ffcc00, transparent); } /* Bright Yellow */
+    50%  { background: linear-gradient(#34c759, transparent); } /* Bright Green */
+    66%  { background: linear-gradient(#00a9ff, transparent); } /* Bright Blue */
+    83%  { background: linear-gradient(#bf5af2, transparent); } /* Bright Purple */
+    100% { background: linear-gradient(#ff3b3b, transparent); } /* Back to Red */
+}
+/* Class applies BOTH animations - Fast Rainbow */
+.comet-rainbow {
+    animation-name: comet-move-fade, rainbow-flash;
+    animation-duration: 3s, 0.2s; /* Movement 3s, Color cycle 0.2s */
+    animation-timing-function: ease-in-out, linear;
+    animation-fill-mode: forwards, none;
+    animation-iteration-count: 1, infinite;
+}
+/* --- End COMET CSS --- */
+
+/* --- Content Section Styling --- */
+.content-section { padding: 80px 0; }
+.content-section.alt-bg { background-color: var(--card-bg); } /* Use card bg for alt */
+.content-section h2 { text-align: center; margin-bottom: 4rem; color: var(--text-color); /* White titles */ font-weight: 600;}
+.section-intro { text-align: center; max-width: 700px; /* Slightly narrower intro */ margin-left: auto; margin-right: auto; margin-bottom: 3rem; font-size: 1.1rem; color: var(--text-color-muted); font-weight: 400; line-height: 1.7; }
+
+/* Libcardano Section */
+#libcardano { text-align: center; }
+#libcardano .cta-button.secondary { margin-top: 1rem; }
+
+/* Bindings Section */
+#bindings h2 { color: var(--text-color); }
+.bindings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; /* Increased gap */ }
+.binding-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; /* Slightly more round */ padding: 30px; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; box-shadow: none; display: flex; flex-direction: column; }
+.binding-card:hover { transform: translateY(-5px); border-color: var(--primary-color); box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* Subtle shadow */ }
+.binding-card h3 { color: var(--text-color); margin-bottom: 1rem; font-size: 1.2rem; /* Adjusted size */ font-weight: 500; }
+.binding-card h3::before { display: none; } /* No icon */
+.binding-card p { flex-grow: 1; font-size: 0.95rem; margin-bottom: 1.5rem; color: var(--text-color-muted); font-weight: 400; }
+.binding-card a { font-weight: 500; align-self: flex-start; color: var(--primary-color); font-size: 0.9rem; }
+.binding-card a:hover { color: var(--secondary-color); }
+
+/* Why Choose Section (Grid like Meteor) */
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; /* Adjusted gap */ text-align: left; }
+.feature-item { background-color: var(--card-bg); padding: 30px; border-radius: 10px; border: 1px solid var(--border-color); box-shadow: none; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
+.feature-item:hover { transform: translateY(-5px); border-color: var(--primary-color); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+.feature-item h3 { color: var(--text-color); margin-bottom: 0.7rem; font-size: 1.15rem; font-weight: 600; }
+.feature-item p { font-size: 0.95rem; color: var(--text-color-muted); font-weight: 400; line-height: 1.6; }
+
+/* Getting Started Section */
+#getting-started .section-intro { color: var(--text-color-muted); }
+
+/* Under the Hood Section (Simplified) */
+.tech-details-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 35px; }
+.tech-detail { background: none; padding: 0; border: 0; border-left: 3px solid var(--border-color); padding-left: 20px; box-shadow: none; }
+.tech-detail h4 { color: var(--text-color); margin-bottom: 0.5rem; font-weight: 500; font-size: 1.05rem; }
+.tech-detail p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 0; color: var(--text-color-muted); font-weight: 400;}
+
+/* Contribution Section */
+.contribution-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 3rem; }
+.contribution-column h3 { color: var(--text-color); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.8rem; font-weight: 600;}
+.contribution-column ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+.contribution-column li { margin-bottom: 1rem; padding-left: 25px; position: relative; font-size: 1rem; color: var(--text-color-muted); font-weight: 400; }
+.contribution-column li::before { content: '✓'; position: absolute; left: 0; color: var(--primary-color); /* Purple checkmark */ font-weight: bold; }
+.contribution-column li a { color: var(--primary-color); font-weight: 400; } /* Link color */
+.contribution-column li a:hover { color: var(--secondary-color); }
+.contribution-column .cta-button.secondary { margin-top: 1rem; } /* Use standard secondary style */
+
+/* --- Footer --- */
+.site-footer { background: var(--bg-color); text-align: center; padding: 50px 0; /* Increased padding */ margin-top: 80px; border-top: 1px solid var(--border-color); font-size: 0.9rem; }
+.site-footer p { margin-bottom: 0.8rem; /* Increased space */ color: var(--text-color-muted); font-size: 0.95rem; }
+.footer-links a { margin: 0 15px; /* Wider space */ color: var(--text-color-muted); transition: color 0.3s ease; }
+.footer-links a:hover { color: var(--primary-color); }
+
+/* --- Back to Top Button --- */
+#back-to-top-btn {
+    position: fixed; bottom: 25px; right: 25px; width: 45px; height: 45px;
+    background-color: var(--primary-color); color: #fff; border: none; border-radius: 50%;
+    font-size: 20px; line-height: 45px; text-align: center; cursor: pointer;
+    opacity: 0; visibility: hidden; transform: translateY(20px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 999; box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+#back-to-top-btn.active { opacity: 0.9; /* Slightly transparent */ visibility: visible; transform: translateY(0); }
+#back-to-top-btn:hover { opacity: 1; background-color: var(--secondary-color); box-shadow: 0 5px 12px rgba(0,0,0,0.4); }
+
+/* --- Responsiveness --- */
+@media (max-width: 768px) { /* Tablet */
+     h1 { font-size: 2.8rem; } h2 { font-size: 2.1rem; } .hero { min-height: 80vh; }
+     .hero h1 { font-size: 3rem; } .hero p { font-size: 1.1rem; }
+     .bindings-grid { grid-template-columns: 1fr; }
+     .site-header .container { justify-content: center; }
+     .logo-text { font-size: 1.3rem; } .site-nav { gap: 10px 25px; /* Adjust wrap gap */ }
+     .feature-grid { grid-template-columns: 1fr; }
+     .tech-details-grid { grid-template-columns: 1fr; }
+     .contribution-columns { grid-template-columns: 1fr; }
+     section { padding: 60px 0; } /* Reduce padding */
+     .content-section h2 { margin-bottom: 3rem; }
+     .section-intro { margin-bottom: 2rem; }
+}
+@media (max-width: 480px) { /* Mobile */
+     h1 { font-size: 2.2rem; } h2 { font-size: 1.8rem;} .hero h1 { font-size: 2.5rem; } .hero p { font-size: 1rem; }
+     .cta-button { padding: 12px 25px; font-size: 0.9rem; }
+     .logo-text { font-size: 1.2rem; } .logo-icon { font-size: 1.6rem; }
+     .site-nav { gap: 10px 15px; /* Keep reasonable gap */ } .site-nav a { font-size: 0.9rem; }
+     .section-intro { font-size: 1rem; }
+     #back-to-top-btn { width: 40px; height: 40px; font-size: 18px; line-height: 40px; bottom: 15px; right: 15px;}
+     section { padding: 50px 0; } /* Further reduce padding */
+     .content-section h2 { margin-bottom: 2.5rem;}
+} 
