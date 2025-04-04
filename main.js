@@ -1,4 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Create stars for the hero section only
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        createStars(heroSection, 200, 0.3);
+    }
+
+    // Create comets for the hero section
+
+    // Back to top button functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Recreate stars on window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            // Remove existing stars
+            const existingStars = document.querySelectorAll('.star');
+            existingStars.forEach(star => star.remove());
+            // Create new stars only in the hero section
+            if (heroSection) {
+                createStars(heroSection, 200, 0.3);
+            }
+        }, 250);
+    });
+
     // --- Function to create static stars ---
     function createStars(container, totalCount, twinkleProbability) {
         if (!container) return;
@@ -44,15 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 10000);
     }
 
-    // Selectors
-    const starsContainer = document.querySelector('.stars-background');
-    const CometsContainer = document.querySelector('.hero .comets');
-    const backToTopButton = document.getElementById("back-to-top-btn");
-
-    // Create Static Stars
-    createStars(starsContainer, 200, 0.02); // Generate static stars
-
     // Comet Animation Script
+    const CometsContainer = document.querySelector('.comets');
     if (CometsContainer) {
         function createComet() {
             if (CometsContainer.children.length > 50) {
@@ -75,27 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error("Comet container (.hero .comets) not found!");
     }
-
-    // Back to Top Button Script
-    if (backToTopButton) {
-        const scrollThreshold = 300;
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > scrollThreshold) { backToTopButton.classList.add("active"); }
-            else { backToTopButton.classList.remove("active"); }
-        });
-        backToTopButton.addEventListener("click", (event) => {
-            event.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    }
-
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            createStars(starsContainer, 200, 0.02); // Recreate stars on resize
-        }, 300); // Debounce
-    });
 
     // Embedded bindings data
     const bindingsData = {
