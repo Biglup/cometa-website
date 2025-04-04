@@ -8,8 +8,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
 
@@ -51,33 +56,34 @@
         </section>
 
         <!-- Libcardano-c Introduction -->
-        <section id="libcardano" class="content-section alt-bg">
+        <section id="libcardano" class="content-section">
             <div class="container">
                 <h2>Powered by libcardano-c</h2>
-                <p class="section-intro"> At the core of Project Cometa is <strong>libcardano-c</strong>, a robust and efficient C library designed for building Cardano off-chain applications. It provides low-level access to Cardano's cryptographic primitives, transaction building, address generation, and more, ensuring security and performance. Cometa brings this power to your preferred programming environment. </p>
-                <a href="[YOUR_LIBCARDANO-C_LINK_HERE]" target="_blank" rel="noopener noreferrer" class="cta-button secondary">Learn more about libcardano-c &rarr;</a>
+                <div class="content-logo-container">
+                    <div class="content-wrapper">
+                        <div class="section-intro">
+                            <p>All language bindings are built on top of libcardano-c, a robust C library that provides a solid foundation for interacting with the Cardano blockchain.</p>
+                        </div>
+                    </div>
+                    <div class="libcardano-logo-container">
+                        <img src="logos/cardano-c-logo-small.png" alt="libcardano-c logo" class="libcardano-logo">
+                    </div>
+                </div>
+                <div class="cta-container">
+                    <a href="https://github.com/Biglup/cardano-c" target="_blank" rel="noopener noreferrer" class="cta-button secondary">View libcardano-c Repository</a>
+                </div>
             </div>
         </section>
 
         <!-- Bindings Section -->
-        <section id="bindings" class="content-section">
+        <section id="bindings" class="section">
             <div class="container">
-                <h2>Available Language Bindings</h2>
-                <div class="bindings-grid">
-                     <div class="binding-card card-js"> <h3>JavaScript</h3> <p>Lightweight WASM binding for Node.js and browsers. No special server setup needed.</p> <a href="[LINK_TO_JS_BINDING_REPO]" target="_blank" rel="noopener noreferrer">View &rarr;</a> </div>
-                     <div class="binding-card card-cpp"> <h3>C++</h3> <p>Modern C++ wrappers for high-performance Cardano applications leveraging libcardano-c.</p> <a href="[LINK_TO_CPP_BINDING_REPO]" target="_blank" rel="noopener noreferrer">View &rarr;</a> </div>
-                     <div class="binding-card card-java"> <h3>Java</h3> <p>Robust bindings for the JVM ecosystem, suitable for enterprise-level Cardano integrations.</p> <a href="[LINK_TO_JAVA_BINDING_REPO]" target="_blank" rel="noopener noreferrer">View &rarr;</a> </div>
-                     <div class="binding-card card-csharp"> <h3>C#</h3> <p>Seamlessly integrate Cardano capabilities into your .NET applications with these bindings.</p> <a href="[LINK_TO_CSHARP_BINDING_REPO]" target="_blank" rel="noopener noreferrer">View &rarr;</a> </div>
-                     <div class="binding-card card-ruby"> <h3>Ruby</h3> <p>Elegant and productive Ruby bindings for interacting with the Cardano blockchain.</p> <a href="[LINK_TO_RUBY_BINDING_REPO]" target="_blank" rel="noopener noreferrer">View &rarr;</a> </div>
-                     <div class="binding-card card-python"> <h3>Python</h3> <p>Popular and easy-to-use Python bindings for Cardano development and data analysis.</p> <a href="[LINK_TO_PYTHON_BINDING_REPO]" target="_blank" rel="noopener noreferrer">View &rarr;</a> </div>
-                     <div class="binding-card card-php"> <h3>PHP</h3> <p>Bring Cardano functionality to web servers and applications running on PHP.</p> <a href="[LINK_TO_PHP_BINDING_REPO]" target="_blank" rel="noopener noreferrer">View &rarr;</a> </div>
-                     <div class="binding-card card-lua"> <h3>Lua</h3> <p>Lightweight and embeddable Lua bindings, perfect for scripting and game development.</p> <a href="[LINK_TO_LUA_BINDING_REPO]" target="_blank" rel="noopener noreferrer">View &rarr;</a> </div>
-                     <div class="binding-card card-d"> <h3>D</h3> <p>High-performance D language bindings for seamless Cardano integration.</p> <a href="[LINK_TO_D_BINDING_REPO]" target="_blank" rel="noopener noreferrer">View &rarr;</a> </div>
-                     <div class="binding-card card-zig"> <h3>Zig</h3> <p>Leverage Zig's power and C interoperability with these Cardano bindings.</p> <a href="[LINK_TO_ZIG_BINDING_REPO]" target="_blank" rel="noopener noreferrer">View &rarr;</a> </div>
-                     <div class="binding-card card-go"> <h3>Go</h3> <p>Build concurrent and efficient Cardano applications using Go bindings.</p> <a href="[LINK_TO_GO_BINDING_REPO]" target="_blank" rel="noopener noreferrer">View &rarr;</a> </div>
-                     <div class="binding-card card-jai"> <h3>Jai</h3> <p>Experimental bindings for the Jai programming language (when available).</p> <a href="[LINK_TO_JAI_BINDING_REPO]" target="_blank" rel="noopener noreferrer">View &rarr;</a> </div>
-                     <div class="binding-card card-odin"> <h3>Odin</h3> <p>Odin language bindings for building fast and maintainable Cardano tools.</p> <a href="[LINK_TO_ODIN_BINDING_REPO]" target="_blank" rel="noopener noreferrer">View &rarr;</a> </div>
-                     <div class="binding-card card-ada"> <h3>Ada</h3> <p>Robust and reliable Ada bindings for high-integrity Cardano systems.</p> <a href="[LINK_TO_ADA_BINDING_REPO]" target="_blank" rel="noopener noreferrer">View &rarr;</a> </div>
+                <h2>Language Bindings</h2>
+                <p class="section-description">
+                    Project Cometa provides bindings for various programming languages, making it easy to integrate with your preferred technology stack.
+                </p>
+                <div id="bindings-container" class="bindings-grid">
+                    <!-- Bindings will be dynamically inserted here -->
                 </div>
             </div>
         </section>

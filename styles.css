@@ -62,7 +62,14 @@ section { padding: 80px 0; position: relative; /* Increased section padding */ }
 
 /* --- Hero Section Styling --- */
 .hero {
-    min-height: 80vh; /* Keep height reasonable */ display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden;
+    min-height: 100vh; /* Changed from 80vh to 100vh */
+    height: 100vh; /* Added to ensure full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
     background: var(--bg-color); /* Solid dark */
 }
 .hero-content { max-width: 750px; /* Slightly narrower */ position: relative; z-index: 2; }
@@ -145,19 +152,182 @@ section { padding: 80px 0; position: relative; /* Increased section padding */ }
 .section-intro { text-align: center; max-width: 700px; /* Slightly narrower intro */ margin-left: auto; margin-right: auto; margin-bottom: 3rem; font-size: 1.1rem; color: var(--text-color-muted); font-weight: 400; line-height: 1.7; }
 
 /* Libcardano Section */
-#libcardano { text-align: center; }
-#libcardano .cta-button.secondary { margin-top: 1rem; }
+#libcardano {
+    padding: 80px 0;
+}
+
+#libcardano .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#libcardano h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#libcardano .content-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+#libcardano .content-wrapper {
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 0.75rem;
+}
+
+#libcardano .section-intro {
+    max-width: 100%;
+    margin: 0 0 0.75rem 0;
+    text-align: center;
+}
+
+.libcardano-logo-container {
+    width: 200px;
+    max-width: 200px;
+    margin-bottom: 0.5rem;
+}
+
+.libcardano-logo {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+.cta-container {
+    margin-top: 0.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+#libcardano .cta-button.secondary {
+    margin-top: 0;
+}
 
 /* Bindings Section */
 #bindings h2 { color: var(--text-color); }
-.bindings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; /* Increased gap */ }
-.binding-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; /* Slightly more round */ padding: 30px; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; box-shadow: none; display: flex; flex-direction: column; }
-.binding-card:hover { transform: translateY(-5px); border-color: var(--primary-color); box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* Subtle shadow */ }
-.binding-card h3 { color: var(--text-color); margin-bottom: 1rem; font-size: 1.2rem; /* Adjusted size */ font-weight: 500; }
-.binding-card h3::before { display: none; } /* No icon */
-.binding-card p { flex-grow: 1; font-size: 0.95rem; margin-bottom: 1.5rem; color: var(--text-color-muted); font-weight: 400; }
-.binding-card a { font-weight: 500; align-self: flex-start; color: var(--primary-color); font-size: 0.9rem; }
-.binding-card a:hover { color: var(--secondary-color); }
+.bindings-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; /* Increased gap */ 
+}
+.binding-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 30px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.binding-card:hover {
+    transform: translateY(-5px);
+    border-color: #8a80ff; /* More vivid purple border on hover */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.binding-card .logo-container {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.binding-card .language-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.binding-card h3 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.binding-card .language-subtitle {
+    color: var(--text-color-muted);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+.binding-card p {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color-muted);
+    font-weight: 400;
+}
+.binding-card a {
+    font-weight: 500;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.binding-card a:hover {
+    color: var(--secondary-color);
+}
+.binding-card .card-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+.binding-card .card-actions a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.binding-card .card-actions a i {
+    font-size: 1rem;
+}
+/* Pending binding card styles */
+.binding-card.pending {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+.binding-card.pending:hover {
+    transform: none;
+    border-color: var(--border-color);
+    box-shadow: none;
+}
+.binding-card.pending a {
+    color: var(--text-color-muted);
+    pointer-events: none;
+}
+.binding-card.pending a:hover {
+    color: var(--text-color-muted);
+}
+/* Status pill styles */
+.binding-status {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+}
+.binding-status.in-development {
+    display: none; /* Hide status pill for "In Development" cards */
+}
+.binding-status.planned {
+    background-color: rgba(164, 166, 198, 0.2);
+    color: var(--text-color-muted);
+}
 
 /* Why Choose Section (Grid like Meteor) */
 .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; /* Adjusted gap */ text-align: left; }
@@ -216,6 +386,30 @@ section { padding: 80px 0; position: relative; /* Increased section padding */ }
      section { padding: 60px 0; } /* Reduce padding */
      .content-section h2 { margin-bottom: 3rem; }
      .section-intro { margin-bottom: 2rem; }
+     #libcardano .container {
+         flex-direction: column;
+         text-align: center;
+     }
+     
+     #libcardano .content-wrapper {
+         text-align: center;
+     }
+     
+     #libcardano h2 {
+         text-align: center;
+     }
+     
+     #libcardano .section-intro {
+         text-align: center;
+     }
+     
+     .libcardano-logo-container {
+         margin: 0 auto 30px;
+     }
+     
+     .cta-container {
+         text-align: center;
+     }
 }
 @media (max-width: 480px) { /* Mobile */
      h1 { font-size: 2.2rem; } h2 { font-size: 1.8rem;} .hero h1 { font-size: 2.5rem; } .hero p { font-size: 1rem; }
@@ -226,4 +420,11 @@ section { padding: 80px 0; position: relative; /* Increased section padding */ }
      #back-to-top-btn { width: 40px; height: 40px; font-size: 18px; line-height: 40px; bottom: 15px; right: 15px;}
      section { padding: 50px 0; } /* Further reduce padding */
      .content-section h2 { margin-bottom: 2.5rem;}
+}
+
+/* Responsive styles for libcardano section */
+@media (max-width: 768px) {
+    #libcardano .content-wrapper {
+        max-width: 100%;
+    }
 } 

@@ -96,4 +96,207 @@ document.addEventListener('DOMContentLoaded', () => {
             createStars(starsContainer, 200, 0.02); // Recreate stars on resize
         }, 300); // Debounce
     });
+
+    // Embedded bindings data
+    const bindingsData = {
+        "bindings": [
+            {
+                "language": "JavaScript/TypeScript",
+                "description": "JavaScript and TypeScript bindings for libcardano-c",
+                "status": "In Development",
+                "color": "#635bfffe",
+                "icon": "fab fa-js",
+                "repository": "https://github.com/Biglup/cardano-c-js"
+            },
+            {
+                "language": "C++",
+                "description": "C++ bindings for libcardano-c",
+                "status": "Planned",
+                "color": "#635bfffe",
+                "icon": "fas fa-code",
+                "repository": "https://github.com/Biglup/cardano-c-cpp"
+            },
+            {
+                "language": "C#",
+                "description": "C# bindings for libcardano-c",
+                "status": "Planned",
+                "color": "#635bfffe",
+                "icon": "fab fa-microsoft",
+                "repository": "https://github.com/Biglup/cardano-c-sharp"
+            },
+            {
+                "language": "Java",
+                "description": "Java bindings for libcardano-c",
+                "status": "Planned",
+                "color": "#635bfffe",
+                "icon": "fab fa-java",
+                "repository": "https://github.com/Biglup/cardano-c-java"
+            },
+            {
+                "language": "Python",
+                "description": "Python bindings for libcardano-c",
+                "status": "Planned",
+                "color": "#635bfffe",
+                "icon": "fab fa-python",
+                "repository": "https://github.com/Biglup/cardano-c-python"
+            },
+            {
+                "language": "Lua",
+                "description": "Lua bindings for libcardano-c",
+                "status": "Planned",
+                "color": "#635bfffe",
+                "icon": "fas fa-code",
+                "repository": "https://github.com/Biglup/cardano-c-lua"
+            },
+            {
+                "language": "Ruby",
+                "description": "Ruby bindings for libcardano-c",
+                "status": "Planned",
+                "color": "#635bfffe",
+                "icon": "fas fa-gem",
+                "repository": "https://github.com/Biglup/cardano-c-ruby"
+            },
+            {
+                "language": "PHP",
+                "description": "PHP bindings for libcardano-c",
+                "status": "Planned",
+                "color": "#635bfffe",
+                "icon": "fab fa-php",
+                "repository": "https://github.com/Biglup/cardano-c-php"
+            },
+            {
+                "language": "Zig",
+                "description": "Zig bindings for libcardano-c",
+                "status": "Planned",
+                "color": "#635bfffe",
+                "icon": "devicon-zig-original",
+                "repository": "https://github.com/Biglup/cardano-c-zig"
+            },
+            {
+                "language": "Odin",
+                "description": "Odin bindings for libcardano-c",
+                "status": "Planned",
+                "color": "#635bfffe",
+                "icon": "devicon-zig-original",
+                "repository": "https://github.com/Biglup/cardano-c-odin"
+            },
+            {
+                "language": "Ada",
+                "description": "Ada bindings for libcardano-c",
+                "status": "Planned",
+                "color": "#635bfffe",
+                "icon": "fas fa-code",
+                "repository": "https://github.com/Biglup/cardano-c-ada"
+            },
+            {
+                "language": "Go",
+                "description": "Go bindings for libcardano-c",
+                "status": "Planned",
+                "color": "#635bfffe",
+                "icon": "fab fa-golang",
+                "repository": "https://github.com/Biglup/cardano-c-go"
+            }
+        ]
+    };
+
+    // Function to display bindings
+    function displayBindings() {
+        const bindingsContainer = document.getElementById('bindings-container');
+        
+        if (!bindingsContainer) {
+            console.error('Bindings container not found!');
+            return;
+        }
+
+        try {
+            console.log('Displaying bindings data...');
+            
+            // Clear existing content
+            bindingsContainer.innerHTML = '';
+
+            bindingsData.bindings.forEach((binding, index) => {
+                console.log(`Creating card for ${binding.language}...`);
+                const card = document.createElement('div');
+                card.className = 'binding-card';
+                
+                // Add pending class if status is "Planned"
+                if (binding.status === "Planned") {
+                    card.classList.add('pending');
+                }
+
+                // Get the appropriate logo path for the language
+                const logoPath = getLogoPath(binding.language);
+
+                // Create card content
+                card.innerHTML = `
+                    <div class="logo-container">
+                        <img src="${logoPath}" alt="${binding.language} logo" class="language-logo">
+                    </div>
+                    <h3>${binding.language}</h3>
+                    <div class="language-subtitle">${binding.description}</div>
+                `;
+
+                // Add action buttons for cards in development
+                if (binding.status === "In Development") {
+                    const actionsDiv = document.createElement('div');
+                    actionsDiv.className = 'card-actions';
+                    actionsDiv.innerHTML = `
+                        <a href="${binding.repository}" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="${binding.documentation || '#'}" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-book"></i> Documentation
+                        </a>
+                    `;
+                    card.appendChild(actionsDiv);
+                }
+
+                // Only add status pill for planned bindings
+                if (binding.status === "Planned") {
+                    const statusPill = document.createElement('div');
+                    statusPill.className = `binding-status ${binding.status.toLowerCase().replace(' ', '-')}`;
+                    statusPill.textContent = binding.status;
+                    card.appendChild(statusPill);
+                }
+
+                bindingsContainer.appendChild(card);
+            });
+        } catch (error) {
+            console.error('Error displaying bindings:', error);
+            bindingsContainer.innerHTML = `
+                <div class="error-message" style="text-align: center; color: var(--text-color-muted); padding: 2rem;">
+                    <p>Failed to display language bindings. Please try refreshing the page.</p>
+                    <p>Error: ${error.message}</p>
+                </div>
+            `;
+        }
+    }
+
+    // Function to get the appropriate logo path for a language
+    function getLogoPath(language) {
+        // Map of language names to logo file paths
+        const languageLogos = {
+            'JavaScript/TypeScript': 'logos/javascript.svg',
+            'Python': 'logos/python.svg',
+            'C++': 'logos/c++_Logo.svg',
+            'C#': 'logos/c_sharp.svg',
+            'Java': 'logos/java.svg',
+            'Go': 'logos/go.svg',
+            'Rust': 'logos/rust.svg', // Assuming you'll add this
+            'Lua': 'logos/lua.svg',
+            'PHP': 'logos/php.svg',
+            'Ruby': 'logos/ruby.svg',
+            'Odin': 'logos/odin.svg',
+            'Jai': 'logos/c_Logo.png', // Fallback to C logo
+            'D': 'logos/d.svg', // Assuming you'll add this
+            'Zig': 'logos/zig.svg',
+            'Ada': 'logos/ada.svg'
+        };
+        
+        return languageLogos[language] || 'logos/c_Logo.png'; // Default to C logo if not found
+    }
+
+    // Call displayBindings when the DOM is loaded
+    console.log('DOM loaded, initializing bindings...');
+    displayBindings();
 }); 
