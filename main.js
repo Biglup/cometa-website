@@ -1,13 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Create stars for the hero section only
     const heroSection = document.querySelector('.hero');
     if (heroSection) {
-        createStars(heroSection, 200, 0.3);
+        createStars(heroSection, 400, 0.05);
     }
 
-    // Create comets for the hero section
-
-    // Back to top button functionality
     const backToTopButton = document.getElementById('back-to-top');
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
@@ -26,47 +22,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Recreate stars on window resize
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            // Remove existing stars
             const existingStars = document.querySelectorAll('.star');
             existingStars.forEach(star => star.remove());
-            // Create new stars only in the hero section
+
             if (heroSection) {
-                createStars(heroSection, 200, 0.3);
+                createStars(heroSection, 400, 0.05);
             }
         }, 250);
     });
 
-    // --- Function to create static stars ---
     function createStars(container, totalCount, twinkleProbability) {
         if (!container) return;
-        // Clear only generated stars before recreating (e.g., on resize)
         container.querySelectorAll('.star.generated').forEach(el => el.remove());
 
-        // Clear existing static stars if any (e.g., on resize/reload)
         container.querySelectorAll('.star.static').forEach(el => el.remove());
         for (let i = 0; i < totalCount; i++) {
             const star = document.createElement('div');
-            star.classList.add('star', 'generated'); // Mark as generated
-            const size = Math.random() * 1.5 + 0.5; // Random size (0.5px to 2px)
+            star.classList.add('star', 'generated');
+            const size = Math.random() * 1.5 + 0.5;
             star.style.width = `${size}px`;
             star.style.height = `${size}px`;
-            star.style.top = `${Math.random() * 100}%`; // Random position
+            star.style.top = `${Math.random() * 100}%`;
             star.style.left = `${Math.random() * 100}%`;
-            star.style.opacity = Math.random() * 0.6 + 0.1; // Random opacity (0.1 to 0.7)
+            star.style.opacity = Math.random() * 0.6 + 0.1;
             
-            // Randomly assign twinkle effect
             if (Math.random() < twinkleProbability) {
                 star.classList.add('twinkle');
-                // Set random delay using CSS variable
-                const delay = Math.random() * 4; // Delay up to 4s (animation duration)
+                const delay = Math.random() * 4;
                 star.style.setProperty('--twinkle-delay', `${delay}s`);
             } else {
-                star.classList.add('static'); // Add static class if not twinkling
+                star.classList.add('static');
             }
 
             container.appendChild(star);
@@ -86,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 10000);
     }
 
-    // Comet Animation Script
     const CometsContainer = document.querySelector('.comets');
     if (CometsContainer) {
         function createComet() {
@@ -96,22 +84,20 @@ document.addEventListener('DOMContentLoaded', () => {
             let cometX = Math.round(Math.random() * window.innerWidth);
             let cometY = Math.round(Math.random() * window.innerHeight);
             let comet = document.createElement('div');
-            // Always assign the rainbow effect
             comet.setAttribute('class', 'comet comet-rainbow');
             comet.style.left = cometX+'px';
             comet.style.top  = cometY+'px';
             CometsContainer.append(comet);
             setTimeout(() => {
                 if (comet && comet.parentNode) { comet.remove(); }
-            }, 3000 + 500); // Match movement animation duration
+            }, 3000 + 500);
         }
-        const cometInterval = setInterval(createComet, 1500); // Spawn rate
+        const cometInterval = setInterval(createComet, 1500);
         window.addEventListener('beforeunload', () => { clearInterval(cometInterval); });
     } else {
         console.error("Comet container (.hero .comets) not found!");
     }
 
-    // Embedded bindings data
     const bindingsData = {
         "bindings": [
             {
@@ -201,7 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
-    // Function to display bindings
     function displayBindings() {
         const bindingsContainer = document.getElementById('bindings-container');
         
@@ -213,7 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             console.log('Displaying bindings data...');
             
-            // Clear existing content
             bindingsContainer.innerHTML = '';
 
             bindingsData.bindings.forEach((binding, index) => {
@@ -221,15 +205,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = document.createElement('div');
                 card.className = 'binding-card';
                 
-                // Add pending class if status is "Planned"
                 if (binding.status === "Planned") {
                     card.classList.add('pending');
                 }
 
-                // Get the appropriate logo path for the language
                 const logoPath = getLogoPath(binding.language);
 
-                // Create card content
                 card.innerHTML = `
                     <div class="logo-container">
                         <img src="${logoPath}" alt="${binding.language} logo" class="language-logo">
@@ -238,7 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="language-subtitle">${binding.description}</div>
                 `;
 
-                // Add action buttons for cards in development
                 if (binding.status === "In Development") {
                     const actionsDiv = document.createElement('div');
                     actionsDiv.className = 'card-actions';
@@ -253,7 +233,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.appendChild(actionsDiv);
                 }
 
-                // Only add status pill for planned bindings
                 if (binding.status === "Planned") {
                     const statusPill = document.createElement('div');
                     statusPill.className = `binding-status ${binding.status.toLowerCase().replace(' ', '-')}`;
@@ -274,9 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Function to get the appropriate logo path for a language
     function getLogoPath(language) {
-        // Map of language names to logo file paths
         const languageLogos = {
             'JavaScript/TypeScript': 'logos/javascript.svg',
             'Python': 'logos/python.svg',
@@ -284,21 +261,20 @@ document.addEventListener('DOMContentLoaded', () => {
             'C#': 'logos/c_sharp.svg',
             'Java': 'logos/java.svg',
             'Go': 'logos/go.svg',
-            'Rust': 'logos/rust.svg', // Assuming you'll add this
+            'Rust': 'logos/rust.svg',
             'Lua': 'logos/lua.svg',
             'PHP': 'logos/php.svg',
             'Ruby': 'logos/ruby.svg',
             'Odin': 'logos/odin.svg',
-            'Jai': 'logos/c_Logo.png', // Fallback to C logo
-            'D': 'logos/d.svg', // Assuming you'll add this
+            'Jai': 'logos/c_Logo.png',
+            'D': 'logos/d.svg',
             'Zig': 'logos/zig.svg',
             'Ada': 'logos/ada.svg'
         };
         
-        return languageLogos[language] || 'logos/c_Logo.png'; // Default to C logo if not found
+        return languageLogos[language] || 'logos/c_Logo.png';
     }
 
-    // Call displayBindings when the DOM is loaded
     console.log('DOM loaded, initializing bindings...');
     displayBindings();
 }); 
