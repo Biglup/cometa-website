@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Cometa - Bindings for libcardano-c</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <a href="#" class="logo">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="logos/cometa_logo_tiny.png">
+                    <img src="logos/cometa_logo.png" alt="Cometa Logo" class="logo-image">
+                </picture>
+            </a>
+            <nav class="site-nav">
+                <a href="#bindings">Bindings</a>
+                <a href="#getting-started">Getting Started</a>
+                <a href="#contribute">Contribution</a>
+                <a href="https://github.com/Biglup" target="_blank" rel="noopener noreferrer">
+                    <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="stars-background">
+            </div>
+            <div class="comets"></div>
+            <div class="hero-content container">
+                <h1>Build on Cardano Using Your Favorite Language</h1>
+                <p> Project Cometa provides high-quality, idiomatic language bindings for libcardano-c, empowering developers to interact with the Cardano blockchain seamlessly. </p>
+                <a href="#bindings" class="cta-button">Explore Bindings</a>
+            </div>
+        </section>
+
+        <!-- Libcardano-c Introduction -->
+        <section id="libcardano" class="content-section">
+            <div class="container">
+                <h2>Powered by libcardano-c</h2>
+                <div class="content-logo-container">
+                    <div class="content-wrapper">
+                        <div class="section-intro">
+                            <p>All language bindings are built on top of libcardano-c, a robust C library that provides a solid foundation for interacting with the Cardano blockchain.</p>
+                        </div>
+                    </div>
+                    <div class="libcardano-logo-container">
+                        <img src="logos/cardano-c-logo-small.png" alt="libcardano-c logo" class="libcardano-logo">
+                    </div>
+                </div>
+                <div class="cta-container">
+                    <a href="https://github.com/Biglup/cardano-c" target="_blank" rel="noopener noreferrer" class="cta-button secondary">View libcardano-c Repository</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bindings Section -->
+        <section id="bindings" class="section">
+            <div class="container">
+                <h2>Language Bindings</h2>
+                <p class="section-description">
+                    Project Cometa provides bindings for various programming languages, making it easy to integrate with your preferred technology stack.
+                </p>
+                <div id="bindings-container" class="bindings-grid">
+                </div>
+            </div>
+        </section>
+
+         <!-- Why Choose Section -->
+        <section id="why-cometa" class="content-section alt-bg">
+            <div class="container">
+                <h2>Why Choose Cometa?</h2>
+                <div class="feature-grid">
+                     <div class="feature-item"><h3>Engineered for Excellence</h3><p>Built upon the robust, MISRA C compliant, and rigorously tested <strong>libcardano-c</strong>. Inherit commercial-grade quality, security, and reliability for your Cardano applications.</p></div>
+                     <div class="feature-item"><h3>Idiomatic & Easy Integration</h3><p>Cometa aims for natural, idiomatic bindings in each language, making Cardano development feel familiar and accelerating your workflow.</p></div>
+                     <div class="feature-item"><h3>Comprehensive Features</h3><p>Access core Cardano functionalities like address generation/parsing, Ed25519 cryptography, transaction building, serialization/deserialization, and more.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Getting Started Section -->
+        <section id="getting-started" class="content-section">
+             <div class="container">
+                <h2>Getting Started</h2>
+                <p class="section-intro">Ready to build? Choose your preferred language binding from the list above, follow its specific installation guide, and start coding.</p>
+                 <p class="section-intro">Check the README in each binding's repository for minimal examples to get you started quickly.</p>
+            </div>
+        </section>
+
+        <!-- Contributing Section (CTA) -->
+        <section id="contribute" class="content-section">
+            <div class="container">
+                <h2>Help Grow the Cometa Ecosystem!</h2>
+                <p class="section-intro">Project Cometa is community-driven. Your contributions help make Cardano development accessible to everyone, regardless of their preferred language. Here's how you can get involved:</p>
+                <div class="contribution-columns">
+                    <div class="contribution-column">
+                        <h3>Improve Existing Bindings</h3>
+                        <ul>
+                            <li>Report bugs or suggest features on <a href="https://github.com/Biglup/cardano-c/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a>.</li>
+                            <li>Enhance documentation and add usage examples.</li>
+                            <li>Fix open issues or implement missing <code>libcardano-c</code> features.</li>
+                            <li>Submit Pull Requests to the respective binding repositories.</li>
+                        </ul>
+                        <a href="https://github.com/Biglup/cardano-c/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="cta-button secondary">Contribution Guidelines</a>
+                    </div>
+                    <div class="contribution-column">
+                        <h3>Add New Language Bindings</h3>
+                        <ul>
+                            <li>Check <a href="https://github.com/Biglup/cardano-c/issues" target="_blank" rel="noopener noreferrer">Discussions/Issues</a> to see if work has started.</li>
+                            <li>Familiarize yourself with the <a href="https://cardano-c.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer"><code>libcardano-c</code> API</a>.</li>
+                            <li>Review existing bindings for patterns and best practices.</li>
+                            <li>Start coding! Announce your work to collaborate.</li>
+                            <li>Aim for high quality with good testing and documentation.</li>
+                        </ul>
+                         <a href="[DEVELOPER_CHAT_LINK]" target="_blank" rel="noopener noreferrer" class="cta-button secondary">Join Developer Chat</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Biglup Labs. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/Biglup" target="_blank" rel="noopener noreferrer">Cometa GitHub</a> |
+                <a href="https://github.com/Biglup/cardano-c" target="_blank" rel="noopener noreferrer">libcardano-c</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>
