@@ -108,6 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 "documentation": "https://cometajs.readthedocs.io/en/latest"
             },
             {
+                "language": "Python",
+                "description": "Python bindings for libcardano-c",
+                "status": "In Development",
+                "repository": "https://github.com/Biglup/cometa.py",
+                "documentation": "https://cometapy.readthedocs.io/en/latest"
+            },
+            {
                 "language": "C++",
                 "description": "C++ bindings for libcardano-c",
                 "status": "Planned",
@@ -127,13 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 "status": "Planned",
                 "repository": "https://github.com/Biglup/cardano-c-java",
                 "documentation": "https://github.com/Biglup/cardano-c-java#readme"
-            },
-            {
-                "language": "Python",
-                "description": "Python bindings for libcardano-c",
-                "status": "Planned",
-                "repository": "https://github.com/Biglup/cardano-c-python",
-                "documentation": "https://github.com/Biglup/cardano-c-python#readme"
             },
             {
                 "language": "Lua",
