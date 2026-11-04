@@ -330,6 +330,7 @@ section::before {
 }
 .binding-card .card-actions {
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     margin-top: auto;
     margin-bottom: 15px;
@@ -373,6 +374,10 @@ section::before {
 }
 .binding-status.in-development {
     display: none; /* Hide status pill for "In Development" cards */
+}
+.binding-status.release-candidate {
+    background-color: rgba(164, 166, 198, 0.2);
+    color: var(--primary-color);
 }
 .binding-status.planned {
     background-color: rgba(164, 166, 198, 0.2);

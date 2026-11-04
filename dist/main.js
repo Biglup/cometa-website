@@ -116,10 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             {
                 "language": "C++",
-                "description": "C++ bindings for libcardano-c",
-                "status": "Planned",
-                "repository": "https://github.com/Biglup/cardano-c-cpp",
-                "documentation": "https://github.com/Biglup/cardano-c-cpp#readme"
+                "description": "C++17 bindings for libcardano-c",
+                "status": "Release Candidate",
+                "repository": "https://github.com/Biglup/cometa.cpp",
+                "documentation": "https://cometacpp.readthedocs.io/en/latest/",
+                "release": "https://github.com/Biglup/cometa.cpp/releases/tag/v2.0.0-rc.1"
             },
             {
                 "language": "C#",
@@ -219,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="language-subtitle">${binding.description}</div>
                 `;
 
-                if (binding.status === "In Development") {
+                if (binding.status !== "Planned") {
                     const actionsDiv = document.createElement('div');
                     actionsDiv.className = 'card-actions';
                     actionsDiv.innerHTML = `
@@ -230,10 +231,18 @@ document.addEventListener('DOMContentLoaded', () => {
                             <i class="fas fa-book"></i> Documentation
                         </a>
                     `;
+                    if (binding.release) {
+                        const releaseLink = document.createElement('a');
+                        releaseLink.href = binding.release;
+                        releaseLink.target = '_blank';
+                        releaseLink.rel = 'noopener noreferrer';
+                        releaseLink.innerHTML = '<i class="fas fa-download"></i> Download';
+                        actionsDiv.appendChild(releaseLink);
+                    }
                     card.appendChild(actionsDiv);
                 }
 
-                if (binding.status === "Planned") {
+                if (binding.status !== "In Development") {
                     const statusPill = document.createElement('div');
                     statusPill.className = `binding-status ${binding.status.toLowerCase().replace(' ', '-')}`;
                     statusPill.textContent = binding.status;
