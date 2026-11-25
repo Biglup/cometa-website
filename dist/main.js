@@ -122,6 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 "documentation": "https://cometacpp.readthedocs.io/en/latest/"
             },
             {
+                "language": "Haskell",
+                "description": "Haskell bindings for libcardano-c",
+                "status": "In Development",
+                "repository": "https://github.com/Biglup/cometa.hs",
+                "documentation": "https://hackage.haskell.org/package/cometa-0.1.0.0/candidate/docs/index.html"
+            },
+            {
                 "language": "C#",
                 "description": "C# bindings for libcardano-c",
                 "status": "Planned",
@@ -258,6 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'JavaScript/TypeScript': 'logos/javascript.svg',
             'Python': 'logos/python.svg',
             'C++': 'logos/c++_Logo.svg',
+            'Haskell': 'logos/haskell.svg',
             'C#': 'logos/c_sharp.svg',
             'Java': 'logos/java.svg',
             'Go': 'logos/go.svg',
